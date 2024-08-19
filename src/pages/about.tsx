@@ -1,10 +1,15 @@
 import React from "react";
+import Layout from "../app/display";
+import { cn } from "@/lib/utils";
 
 const AboutPage: React.FC = () => {
   return (
-    <div className="p-8">
-      <h1 className="text-3xl font-bold">About Page</h1>
-    </div>
+    <>
+      <Layout />
+      <div className="p-8">
+        <h1 className="text-3xl font-bold">About Page</h1>
+      </div>
+    </>
   );
 };
 
