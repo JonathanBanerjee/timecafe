@@ -1,7 +1,9 @@
-import Display from "./display";
-
-import { cn } from "@/lib/utils";
-
 export default function Home() {
-  return <Display />;
+  return (
+    <>
+      <div className="p-8">
+        <h1 className="text-3xl font-bold">Home Page</h1>
+      </div>
+    </>
+  );
 }

@@ -11,7 +11,6 @@ import {
 } from "@/components/ui/navigation-menu";
 
 import { cn } from "@/lib/utils";
-import { Children } from "react";
 
 export default function Display() {
   return (
