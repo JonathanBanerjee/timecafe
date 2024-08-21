@@ -18,11 +18,11 @@ export default function Display() {
       <header className="flex items-center justify-between bg-emerald-800 p-4">
         <div className="flex items-center space-x-4">
           <Image
+            width={100}
+            height={100}
             src="/logo-main.jpg"
             alt="Cafe Logo"
             className="dark:invert rounded-md"
-            width={100}
-            height={100}
           />
           <h2 className={cn("text-white", "text-lg", "font-semibold")}>
             Art Café

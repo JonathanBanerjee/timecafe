@@ -1,4 +1,6 @@
+"use client";
 import React from "react";
+import GoogleMap from "@/components/ui/map";
 
 const ContactPage: React.FC = () => {
   return (
@@ -6,6 +8,7 @@ const ContactPage: React.FC = () => {
       <div className="p-8">
         <h1 className="text-3xl font-bold">Contact Us Page</h1>
       </div>
+      <GoogleMap />
     </>
   );
 };
