@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -12,18 +13,43 @@ import { Label } from "@/components/ui/label";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 export function TabsDemo() {
+  const [selectedTab, setSelectedTab] = useState("bagelsandtoasties");
+
   return (
-    <Tabs defaultValue="bagelsandtoasties" className="w-full">
-      <TabsList className="grid w-full grid-cols-8">
-        <TabsTrigger value="bagelsandtoasties">Bagels & Toasties</TabsTrigger>
-        <TabsTrigger value="healthbowls">Health Bowls</TabsTrigger>
-        <TabsTrigger value="plates">Plates</TabsTrigger>
-        <TabsTrigger value="sweetandsavoury">Sweet & Savoury</TabsTrigger>
-        <TabsTrigger value="coffee">Coffee</TabsTrigger>
-        <TabsTrigger value="tea">Tea</TabsTrigger>
-        <TabsTrigger value="juiceandsmoothie">Juice & Smoothie</TabsTrigger>
-        <TabsTrigger value="hotchocolate">Hot Chocolate (Callebut)</TabsTrigger>
-      </TabsList>
+    <Tabs value={selectedTab} onValueChange={setSelectedTab} className="w-full">
+      {/* Tabs for larger screens */}
+      <div className="hidden lg:block">
+        <TabsList className="grid w-full grid-cols-8">
+          <TabsTrigger value="bagelsandtoasties">Bagels & Toasties</TabsTrigger>
+          <TabsTrigger value="healthbowls">Health Bowls</TabsTrigger>
+          <TabsTrigger value="plates">Plates</TabsTrigger>
+          <TabsTrigger value="sweetandsavoury">Sweet & Savoury</TabsTrigger>
+          <TabsTrigger value="coffee">Coffee</TabsTrigger>
+          <TabsTrigger value="tea">Tea</TabsTrigger>
+          <TabsTrigger value="juiceandsmoothie">Juice & Smoothie</TabsTrigger>
+          <TabsTrigger value="hotchocolate">
+            Hot Chocolate (Callebut)
+          </TabsTrigger>
+        </TabsList>
+      </div>
+
+      {/* Dropdown for smaller screens */}
+      <div className="block lg:hidden w-full">
+        <select
+          className="w-full border border-gray-300 rounded-md p-2"
+          value={selectedTab}
+          onChange={(e) => setSelectedTab(e.target.value)}
+        >
+          <option value="bagelsandtoasties">Bagels & Toasties</option>
+          <option value="healthbowls">Health Bowls</option>
+          <option value="plates">Plates</option>
+          <option value="sweetandsavoury">Sweet & Savoury</option>
+          <option value="coffee">Coffee</option>
+          <option value="tea">Tea</option>
+          <option value="juiceandsmoothie">Juice & Smoothie</option>
+          <option value="hotchocolate">Hot Chocolate (Callebut)</option>
+        </select>
+      </div>
 
       <TabsContent value="bagelsandtoasties">
         <Card>
