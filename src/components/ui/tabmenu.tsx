@@ -154,9 +154,18 @@ export function TabsDemo() {
         <Card>
           <CardHeader>
             <CardTitle>Juice and Smoothies</CardTitle>
-            <CardDescription>Juice and Smoothies here</CardDescription>
+            <CardDescription>Juice and Smoothies</CardDescription>
           </CardHeader>
-          <CardContent className="space-y-2"></CardContent>
+          <CardContent className="space-y-2">
+            <p>Classic</p>
+            <CardDescription>Carrot, Apple, Orange, Ginger</CardDescription>
+            <p>Green Machine</p>
+            <CardDescription>
+              Apple, Celery, Cucumber, Spinach, Lemon
+            </CardDescription>
+            <p>Watermelon Juice (Season's Special)</p>
+            <CardDescription>Pure Watermelon Juice</CardDescription>
+          </CardContent>
           <CardFooter>
             <Button>Insert Juice and Smoothies</Button>
           </CardFooter>
