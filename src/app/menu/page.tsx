@@ -1,4 +1,5 @@
 import React from "react";
+import { TabsDemo } from "@/components/ui/tabmenu";
 
 const MenuPage: React.FC = () => {
   return (
@@ -6,6 +7,7 @@ const MenuPage: React.FC = () => {
       <div className="p-8">
         <h1 className="text-3xl font-bold">Menu Page</h1>
       </div>
+      <TabsDemo />
     </>
   );
 };
