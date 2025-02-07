@@ -103,7 +103,7 @@ export default function RootLayout({
               image: "https://timeartcafe.com/timeocafe.jpg",
               "@id": "https://timeartcafe.com",
               url: "https://timeartcafe.com",
-              telephone: "020 1234 5678",
+              telephone: "07859 092671",
               address: {
                 "@type": "PostalAddress",
                 streetAddress: "76 Haverstock Hill",
