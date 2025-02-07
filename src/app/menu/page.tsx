@@ -1,6 +1,5 @@
 "use client";
 import React from "react";
-
 import { TabsDemo } from "@/components/ui/tabmenu";
 
 const MenuPage: React.FC = () => {

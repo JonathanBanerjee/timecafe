@@ -15,8 +15,45 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 export function TabsDemo() {
   const [selectedTab, setSelectedTab] = useState("bagelsandtoasties");
 
+  const menuItems = {
+    bagelsandtoasties: [
+      {
+        name: "Classic Bagel",
+        description: "Cream cheese, smoked salmon, capers",
+        price: "£7.50",
+      },
+      {
+        name: "Veggie Delight",
+        description: "Hummus, avocado, roasted vegetables",
+        price: "£6.50",
+      },
+      {
+        name: "Club Toastie",
+        description: "Chicken, bacon, tomato, lettuce",
+        price: "£8.00",
+      },
+    ],
+    healthbowls: [
+      {
+        name: "Buddha Bowl",
+        description: "Quinoa, roasted chickpeas, avocado",
+        price: "£9.50",
+      },
+      {
+        name: "Açai Bowl",
+        description: "Açai blend, granola, fresh fruits",
+        price: "£8.50",
+      },
+    ],
+    // ... add more menu items for other categories
+  };
+
   return (
-    <Tabs value={selectedTab} onValueChange={setSelectedTab} className="w-full">
+    <Tabs
+      value={selectedTab}
+      onValueChange={setSelectedTab}
+      className="w-full max-w-6xl mx-auto px-4"
+    >
       {/* Tabs for larger screens */}
       <div className="hidden lg:block">
         <TabsList className="grid w-full grid-cols-8">
@@ -54,24 +91,29 @@ export function TabsDemo() {
       <TabsContent value="bagelsandtoasties">
         <Card>
           <CardHeader>
-            <CardTitle>Bagels and Toasties</CardTitle>
-            <CardDescription>
-              Make changes to your account here. Click save when you're done.
+            <CardTitle className="text-3xl font-bold text-emerald-800">
+              Bagels & Toasties
+            </CardTitle>
+            <CardDescription className="text-lg">
+              Fresh, handmade bagels and perfectly grilled toasties
             </CardDescription>
           </CardHeader>
-          <CardContent className="space-y-2">
-            <div className="space-y-1">
-              <Label htmlFor="name">Name</Label>
-              <Input id="name" defaultValue="Pedro Duarte" />
-            </div>
-            <div className="space-y-1">
-              <Label htmlFor="username">Username</Label>
-              <Input id="username" defaultValue="@peduarte" />
-            </div>
+          <CardContent className="grid gap-6">
+            {menuItems.bagelsandtoasties.map((item) => (
+              <div
+                key={item.name}
+                className="flex justify-between items-start border-b pb-4"
+              >
+                <div>
+                  <h3 className="font-semibold text-lg">{item.name}</h3>
+                  <p className="text-gray-600">{item.description}</p>
+                </div>
+                <span className="font-medium text-emerald-800">
+                  {item.price}
+                </span>
+              </div>
+            ))}
           </CardContent>
-          <CardFooter>
-            <Button>Save changes</Button>
-          </CardFooter>
         </Card>
       </TabsContent>
       <TabsContent value="healthbowls">
