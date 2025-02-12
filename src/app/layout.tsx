@@ -162,7 +162,7 @@ export default function RootLayout({
                 <h3 className="text-lg font-semibold mb-4">Contact</h3>
                 <p>76 Haverstock Hill</p>
                 <p>London NW3 2BE</p>
-                <p>Tel: 020 1234 5678</p>
+                <p>Tel: 07859 092671</p>
               </div>
               <div>
                 <h3 className="text-lg font-semibold mb-4">Follow Us</h3>
