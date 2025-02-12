@@ -26,15 +26,21 @@ export default function Display() {
     <header className="sticky top-0 z-50 bg-emerald-800 shadow-lg">
       <div className="max-w-7xl mx-auto px-4">
         <div className="flex items-center justify-between h-20">
-          <Link href="/" className="flex items-center space-x-4">
-            <Image
-              width={50}
-              height={50}
-              src="/logo-main.jpg"
-              alt="Cafe Logo"
-              className="rounded-full border-2 border-white"
-            />
-            <h2 className="text-white text-xl font-semibold">Time Art Café</h2>
+          <Link href="/" className="flex items-center space-x-4 group -ml-4">
+            <div className="relative">
+              <Image
+                width={100}
+                height={100}
+                src="/logo-main.jpg"
+                alt="Cafe Logo"
+                className="rounded-lg transition-all duration-300 
+                  shadow-md hover:shadow-lg
+                  border-2 border-emerald-100/20 hover:border-emerald-100/40
+                  transform hover:scale-105"
+                priority
+              />
+            </div>
+            <h2 className="text-white text-3xl font-semibold">Time Art Café</h2>
           </Link>
 
           {/* Desktop Navigation */}
