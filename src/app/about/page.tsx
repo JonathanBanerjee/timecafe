@@ -35,10 +35,11 @@ const AboutPage: React.FC = () => {
           </div>
           <div className="relative h-[400px]">
             <Image
-              src="/about-cafe.jpg"
+              src="/insidecafe2.jpg"
               alt="Inside Time Art Café"
               fill
               className="object-cover rounded-lg"
+              priority
             />
           </div>
         </div>
