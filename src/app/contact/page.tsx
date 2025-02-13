@@ -95,12 +95,17 @@ const ContactPage: React.FC = () => {
                       <h3 className="font-semibold text-lg mb-1">
                         Opening Hours
                       </h3>
-                      <p className="text-gray-600">
-                        Monday - Friday: 7:30 AM - 6:00 PM
-                      </p>
-                      <p className="text-gray-600">
-                        Saturday - Sunday: 8:00 AM - 6:00 PM
-                      </p>
+                      <div className="text-gray-600">
+                        <p>Monday - Friday: 8:00 AM - 5:30 PM</p>
+                        <p>Saturday - Sunday: 9:00 AM - 5:00 PM</p>
+                        <div className="mt-2 text-sm text-gray-500">
+                          <p>Kitchen: 8:00 AM - 4:30 PM</p>
+                          <p>Breakfast: 9:00 AM - 5:00 PM</p>
+                          <p>Brunch: 8:00 AM - 5:00 PM</p>
+                          <p>Lunch: 8:00 AM - 5:00 PM</p>
+                          <p>Takeaway: 8:00 AM - 5:30 PM</p>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>

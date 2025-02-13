@@ -3,6 +3,7 @@ import { Inter as FontSans } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 import Display from "./display";
+import { Instagram } from "lucide-react";
 
 const fontSans = FontSans({
   subsets: ["latin"],
@@ -83,6 +84,13 @@ export const metadata: Metadata = {
   verification: {
     google: "your-google-site-verification", // Add your Google verification code
   },
+  icons: {
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/icon.png", sizes: "32x32" },
+    ],
+  },
+  manifest: "/site.webmanifest",
 };
 
 export default function RootLayout({
@@ -126,18 +134,45 @@ export default function RootLayout({
                     "Thursday",
                     "Friday",
                   ],
-                  opens: "07:30",
-                  closes: "18:00",
+                  opens: "08:00",
+                  closes: "17:30",
                 },
                 {
                   "@type": "OpeningHoursSpecification",
                   dayOfWeek: ["Saturday", "Sunday"],
-                  opens: "08:00",
-                  closes: "18:00",
+                  opens: "09:00",
+                  closes: "17:00",
                 },
               ],
               servesCuisine: ["Coffee", "Café", "Healthy Food", "Bagels"],
               priceRange: "££",
+              additionalProperty: [
+                {
+                  "@type": "PropertyValue",
+                  name: "Kitchen Hours",
+                  value: "8:00 AM - 4:30 PM",
+                },
+                {
+                  "@type": "PropertyValue",
+                  name: "Breakfast Service",
+                  value: "9:00 AM - 5:00 PM",
+                },
+                {
+                  "@type": "PropertyValue",
+                  name: "Brunch Service",
+                  value: "8:00 AM - 5:00 PM",
+                },
+                {
+                  "@type": "PropertyValue",
+                  name: "Lunch Service",
+                  value: "8:00 AM - 5:00 PM",
+                },
+                {
+                  "@type": "PropertyValue",
+                  name: "Takeaway Service",
+                  value: "8:00 AM - 5:30 PM",
+                },
+              ],
             }),
           }}
         />
@@ -155,8 +190,17 @@ export default function RootLayout({
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <div>
                 <h3 className="text-lg font-semibold mb-4">Opening Hours</h3>
-                <p>Monday - Friday: 7:30 AM - 6:00 PM</p>
-                <p>Saturday - Sunday: 8:00 AM - 6:00 PM</p>
+                <div className="space-y-2">
+                  <p>Monday - Friday: 8:00 AM - 5:30 PM</p>
+                  <p>Saturday - Sunday: 9:00 AM - 5:00 PM</p>
+                </div>
+                <div className="mt-4 text-sm text-emerald-200">
+                  <p>Kitchen: 8:00 AM - 4:30 PM</p>
+                  <p>Breakfast: 9:00 AM - 5:00 PM</p>
+                  <p>Brunch: 8:00 AM - 5:00 PM</p>
+                  <p>Lunch: 8:00 AM - 5:00 PM</p>
+                  <p>Takeaway: 8:00 AM - 5:30 PM</p>
+                </div>
               </div>
               <div>
                 <h3 className="text-lg font-semibold mb-4">Contact</h3>
@@ -166,10 +210,30 @@ export default function RootLayout({
               </div>
               <div>
                 <h3 className="text-lg font-semibold mb-4">Follow Us</h3>
-                <div className="flex space-x-4">
-                  {/* Add social media icons/links here */}
-                </div>
+                <a
+                  href="https://www.instagram.com/time.artcafe/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center space-x-2 text-white hover:text-emerald-200 transition-colors"
+                >
+                  <Instagram className="w-5 h-5" />
+                  <span>@time.artcafe</span>
+                </a>
               </div>
+            </div>
+
+            <div className="border-t border-emerald-800 mt-8 pt-4 text-center text-sm text-emerald-200">
+              <p>
+                © 2025 Time Art Café. Website by{" "}
+                <a
+                  href="https://www.github.com/jonathanbanerjee"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-emerald-200 hover:text-white underline transition-colors"
+                >
+                  Jonathan Banerjee
+                </a>
+              </p>
             </div>
           </div>
         </footer>
